@@ -20,7 +20,7 @@
 <meta property="og:site_name" content="기록은 기억을 지배한다">
 <meta property="og:description" content="헥소 (Hexo)는 테마 설치 및 관리가 쉬운 장점이 있습니다. 그리고 테마들이 전반적으로 깔끔하고 기능도 다양합니다. 헥소 (Hexo) 테마는 이곳에서 확인해 보실 수 있습니다. 그 중에서 Hueman 이라는 테마를 적용해 보겠습니다.  1. Hueman 테마 설치하기내 로컬 저장소의 블로그 루트 폴더에서 깃 (Git) 명령어로 테마를 다운로드 받습니다.">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-07-17T03:31:26.415Z">
+<meta property="og:updated_time" content="2018-07-17T03:37:36.717Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo 테마 추천 - Hueman 테마 설정하기">
 <meta name="twitter:description" content="헥소 (Hexo)는 테마 설치 및 관리가 쉬운 장점이 있습니다. 그리고 테마들이 전반적으로 깔끔하고 기능도 다양합니다. 헥소 (Hexo) 테마는 이곳에서 확인해 보실 수 있습니다. 그 중에서 Hueman 이라는 테마를 적용해 보겠습니다.  1. Hueman 테마 설치하기내 로컬 저장소의 블로그 루트 폴더에서 깃 (Git) 명령어로 테마를 다운로드 받습니다.">
@@ -169,12 +169,12 @@
             <p>헥소 (Hexo)는 테마 설치 및 관리가 쉬운 장점이 있습니다. 그리고 테마들이 전반적으로 깔끔하고 기능도 다양합니다.</p>
 <p>헥소 (Hexo) 테마는 <a href="https://hexo.io/themes/" target="_blank" rel="noopener">이곳</a>에서 확인해 보실 수 있습니다. 그 중에서 <a href="https://blog.zhangruipeng.me/hexo-theme-hueman/" target="_blank" rel="noopener">Hueman</a> 이라는 테마를 적용해 보겠습니다. </p>
 <h1 id="1-Hueman-테마-설치하기"><a href="#1-Hueman-테마-설치하기" class="headerlink" title="1. Hueman 테마 설치하기"></a>1. Hueman 테마 설치하기</h1><p>내 로컬 저장소의 블로그 루트 폴더에서 깃 (Git) 명령어로 테마를 다운로드 받습니다.</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\blog&gt; git clone https://github.com/ppoffice/hexo-theme-hueman.git themes/hueman</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\blog&gt; git <span class="built_in">clone</span> https://github.com/ppoffice/hexo-theme-hueman.git themes/hueman</span><br></pre></td></tr></table></figure>
 <p>그리고 블로그의 _config.yml 파일 중 다음 부분을 수정하여 새로운 테마를 적용합니다.</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: hyeman</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: hyeman</span><br></pre></td></tr></table></figure>
 <p>테마가 설치되어 있는 폴더 (C:\blog/themes\hueman)로 이동하여 폴더 안에 있는 _config.yml.example 파일의 이름을 _config.yml 로 수정합니다.</p>
 <p>(선택사항) 만약 이 테마에서 제공하는 검색 기능 (Insight Search)를 이용하려면 다음의 패키지를 설치합니다.</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\blog&gt; npm install -S hexo-generator-json-content</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\blog&gt; npm install -S hexo-generator-json-content</span><br></pre></td></tr></table></figure>
 <h1 id="2-테마-설정하기"><a href="#2-테마-설정하기" class="headerlink" title="2. 테마 설정하기"></a>2. 테마 설정하기</h1><p>테마가 설치되어 있는 폴더 안의 _config.yml 파일을 수정하면 각종 설정을 변경할 수 있습니다.</p>
 <h2 id="2-1-메뉴-설정"><a href="#2-1-메뉴-설정" class="headerlink" title="2-1. 메뉴 설정"></a>2-1. 메뉴 설정</h2><p>메뉴에 추가/수정할 페이지는 아래에서 수동으로 입력할 수 있습니다. 메뉴 이름과 링크 경로 (상대경로 / 절대경로)를 설정해 줍니다.</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Menus</span></span><br><span class="line"><span class="attr">menu:</span></span><br><span class="line"><span class="attr">    Home:</span> <span class="string">/</span></span><br><span class="line">    <span class="comment"># Delete this row if you don't want categories in your header nav bar</span></span><br><span class="line"><span class="attr">    Categories:</span></span><br><span class="line"><span class="attr">    About:</span> <span class="string">/about/index.html</span></span><br></pre></td></tr></table></figure>
