@@ -6,17 +6,24 @@
     
 
     
-    <title>Tag: Snipe IT | 기록은 기억을 지배한다</title>
+    <title>Mikrotik 라우터에서 NAT Hairpin (Loopback) 설정하기 | 기록은 기억을 지배한다</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta property="og:type" content="website">
-<meta property="og:title" content="기록은 기억을 지배한다">
-<meta property="og:url" content="http://leecarus.github.io/tags/Snipe-IT/index.html">
+        <meta name="keywords" content="미크로틱 (Mikrotik),라우터 (Router),NAT Hairpin,NAT Loopback" />
+    
+    <meta name="description" content="1. 내부 네트워크에서 외부 IP로 내부 서버 접속 문제당신은 현재 미크로틱 (Mikrotik) 라우터를 사용하여 로컬망을 사용하고 있습니다. 내부 네트워크는 192.168.88.X 를 사용하고, 외부 접속을 위한 공인 IP는 1.2.3.4 를 사용하고 있다고 가정합니다. 그리고 또한 192.168.88.10 이라는 주소에서 80포트를 사용하여 웹서버를 운">
+<meta name="keywords" content="미크로틱 (Mikrotik),라우터 (Router),NAT Hairpin,NAT Loopback">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mikrotik 라우터에서 NAT Hairpin (Loopback) 설정하기">
+<meta property="og:url" content="http://leecarus.github.io/2018/07/19/Mikrotik-라우터에서-NAT-Hairpin-Loopback-설정하기/index.html">
 <meta property="og:site_name" content="기록은 기억을 지배한다">
+<meta property="og:description" content="1. 내부 네트워크에서 외부 IP로 내부 서버 접속 문제당신은 현재 미크로틱 (Mikrotik) 라우터를 사용하여 로컬망을 사용하고 있습니다. 내부 네트워크는 192.168.88.X 를 사용하고, 외부 접속을 위한 공인 IP는 1.2.3.4 를 사용하고 있다고 가정합니다. 그리고 또한 192.168.88.10 이라는 주소에서 80포트를 사용하여 웹서버를 운">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-07-19T06:54:49.574Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="기록은 기억을 지배한다">
+<meta name="twitter:title" content="Mikrotik 라우터에서 NAT Hairpin (Loopback) 설정하기">
+<meta name="twitter:description" content="1. 내부 네트워크에서 외부 IP로 내부 서버 접속 문제당신은 현재 미크로틱 (Mikrotik) 라우터를 사용하여 로컬망을 사용하고 있습니다. 내부 네트워크는 192.168.88.X 를 사용하고, 외부 접속을 위한 공인 IP는 1.2.3.4 를 사용하고 있다고 가정합니다. 그리고 또한 192.168.88.10 이라는 주소에서 80포트를 사용하여 웹서버를 운">
     
 
     
@@ -123,56 +130,134 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-tag"></i>Tag: <em>Snipe IT</em>
+    <a class="page-title-link" href="/categories/Network/">Network</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Network/Mikrotik/">Mikrotik</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            
-
-    
-    
+                            <article id="post-Mikrotik-라우터에서-NAT-Hairpin-Loopback-설정하기" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2018" class="archive-year"><i class="icon fa fa-calendar-o"></i>2018</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Nas/">Nas</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Nas/Docker/">Docker</a>
-            </div>
-            <div class="date"><time datetime="2018-07-12T07:21:50.000Z" itemprop="datePublished">2018-07-12</time></div>
-        </div>
-        
+            <header class="article-header">
+                
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2018/07/12/Synology-Nas에서-Docker를-이용하여-Snipe-IT-세팅하기/">Synology Nas에서 Docker를 이용하여 Snipe-IT 세팅하기</a>
+        Mikrotik 라우터에서 NAT Hairpin (Loopback) 설정하기
         </h1>
     
 
-        <p class="article-excerpt">
-            1. 오픈소스 IT 자산관리 솔루션 - Snipe ITIT 자산관리를 엑셀로 해오다가 솔루션의 필요를 느끼던 중 오픈소스 프로그램을 검색해 보았습니다.
-가장 눈에 띄는 프로그램이 Snipe IT 라는 프로그램이었습니다. 프로그램 구성도 잘 되어 있었고, 매뉴얼의 문서화도 상세히 되어 있었으며, 한글도 부분적으로 지원하고 있었습니다.
-홈페이지 둘러보기데모버전
-        </p>
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2018/07/19/Mikrotik-라우터에서-NAT-Hairpin-Loopback-설정하기/" class="article-date">
+            <time datetime="2018-07-19T06:11:39.000Z" itemprop="datePublished">2018-07-19</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/NAT-Hairpin/">NAT Hairpin</a>, <a class="tag-link" href="/tags/NAT-Loopback/">NAT Loopback</a>, <a class="tag-link" href="/tags/라우터-Router/">라우터 (Router)</a>, <a class="tag-link" href="/tags/미크로틱-Mikrotik/">미크로틱 (Mikrotik)</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="1-내부-네트워크에서-외부-IP로-내부-서버-접속-문제"><a href="#1-내부-네트워크에서-외부-IP로-내부-서버-접속-문제" class="headerlink" title="1. 내부 네트워크에서 외부 IP로 내부 서버 접속 문제"></a>1. 내부 네트워크에서 외부 IP로 내부 서버 접속 문제</h2><p>당신은 현재 미크로틱 (Mikrotik) 라우터를 사용하여 로컬망을 사용하고 있습니다. 내부 네트워크는 192.168.88.X 를 사용하고, 외부 접속을 위한 공인 IP는 1.2.3.4 를 사용하고 있다고 가정합니다.</p>
+<p>그리고 또한 192.168.88.10 이라는 주소에서 80포트를 사용하여 웹서버를 운영하고 있습니다. </p>
+<p>공유기에서 포트 포워딩이 잘 이루어졌다면 1.2.3.4:80 으로 외부에서 접슥을 하면 이 웹서버에 정상적으로 접속이 가능합니다.</p>
+<p>반면에 내부망에 있는 사용자는 192.169.88.10:80 이라는 로컬 주소를 사용해야 이 웹서버에 정상적으로 접속이 가능합니다. </p>
+<h2 id="2-NAT-Loopback-NAT-Hairpin-설정"><a href="#2-NAT-Loopback-NAT-Hairpin-설정" class="headerlink" title="2. NAT Loopback (NAT Hairpin) 설정"></a>2. NAT Loopback (NAT Hairpin) 설정</h2><p>그런데 만약, 이 내부망에 있는 사용자가 1.2.3.4:80 이라는 주소를 입력해서 이 웹서버에 접속을 하려면 어떻게 될까요?</p>
+<p>일반적인 경우 접속이 되지 않습니다.</p>
+<p>외부 공인 IP 주소를 불러오는 사용자가 동일한 IP 에 있는 상황이기 때문에 서버가 같은 로컬 네트워크) 내에 있는 상황입니다.  즉, 외부에서 바라보면 1.2.3.4 라는 주소를 사용하는 사용자가 1.2.3.4 라는 목적지를 요청하는 상황이 되기 때문에 정상적인 접속이 이루어지지 않습니다. </p>
+<p>이럴 때에 라우터 자체에서 이러한 트래픽의 경우 외부로 돌리지 않고 내부에서 바로 목적지로 보내버릴 수가 있습니다. 이러한 과정을 NAT Loopback 또는 NAT Hairpin 설정이라고 부릅니다.</p>
+<p>접속하려는 목적지가 자기 자신이 속해 있는 네트워크일 때 패킷을 외부로 보내지 않고, 내부로 바로 전환해 줄 수 있도록 설정해 주는 과정입니다. </p>
+<h2 id="3-미크로틱-Mikrotik-라우터에서-Loopback-Hairpin-설정"><a href="#3-미크로틱-Mikrotik-라우터에서-Loopback-Hairpin-설정" class="headerlink" title="3. 미크로틱 (Mikrotik) 라우터에서 Loopback (Hairpin) 설정"></a>3. 미크로틱 (Mikrotik) 라우터에서 Loopback (Hairpin) 설정</h2><p>미크로틱 (Mikrotik) 라우터에서 아래와 같은 설정을 해주시면 문제가 해결이 됩니다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/ip firewall nat </span><br><span class="line"></span><br><span class="line">add chain=dstnat dst-address=1.2.3.4[Your IP] protocol=tcp dst-port=80 action=dst-nat to-addresses=192.168.88.10[Your Server Local IP] to-ports=80 </span><br><span class="line"></span><br><span class="line">add chain=srcnat src-address=192.168.88.0/24[Your Local Network] dst-address=192.168.88.0/24 [Your Local Network] protocol=tcp out-interface=[LAN] action=masquerade</span><br></pre></td></tr></table></figure>
+<p>내 로컬 네트워크에서 나의 외부 IP로 접속을 요청하는 경우 라우터에서 바로 해당 웹서버로 연결시켜주는 설정입니다. </p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://leecarus.github.io/2018/07/19/Mikrotik-라우터에서-NAT-Hairpin-Loopback-설정하기/" data-id="cjjs7dg4r0004i4gghwy4kslo" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
     </div>
 </article>
+
+    <section id="comments">
     
-        </div>
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
     
-
-
-    </div></section>
-
+    </section>
 
 
                         </div>
@@ -193,6 +278,19 @@
             
         </ul>
     </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2018/07/12/Synology-Nas에서-Docker를-이용하여-Snipe-IT-세팅하기/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Synology Nas에서 Docker를 이용하여 Snipe-IT 세팅하기</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -337,11 +435,13 @@
     var disqus_shortname = 'records-is-the-rule-of-memory';
     
     
+    var disqus_url = 'http://leecarus.github.io/2018/07/19/Mikrotik-라우터에서-NAT-Hairpin-Loopback-설정하기/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
