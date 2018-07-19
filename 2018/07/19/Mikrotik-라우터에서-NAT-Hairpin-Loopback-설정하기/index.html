@@ -6,24 +6,24 @@
     
 
     
-    <title>Mikrotik 라우터에서 NAT Hairpin (Loopback) 설정하기 | 기록은 기억을 지배한다</title>
+    <title>MikroTik 라우터에서 NAT Hairpin (Loopback) 설정하기 | 기록은 기억을 지배한다</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="미크로틱 (Mikrotik),라우터 (Router),NAT Hairpin,NAT Loopback" />
+        <meta name="keywords" content="NAT Hairpin,NAT Loopback,Mikrotik,Router" />
     
-    <meta name="description" content="1. 내부 네트워크에서 외부 IP로 내부 서버 접속 문제당신은 현재 미크로틱 (Mikrotik) 라우터를 사용하여 로컬망을 사용하고 있습니다. 내부 네트워크는 192.168.88.X 를 사용하고, 외부 접속을 위한 공인 IP는 1.2.3.4 를 사용하고 있다고 가정합니다. 그리고 또한 192.168.88.10 이라는 주소에서 80포트를 사용하여 웹서버를 운">
-<meta name="keywords" content="미크로틱 (Mikrotik),라우터 (Router),NAT Hairpin,NAT Loopback">
+    <meta name="description" content="1. 내부 네트워크에서 외부 IP로 내부 서버 접속 문제당신은 현재 미크로틱 (MikroTik) 라우터를 사용하여 로컬망을 사용하고 있습니다. 내부 네트워크는 192.168.88.X 를 사용하고, 외부 접속을 위한 공인 IP는 1.2.3.4 를 사용하고 있다고 가정합니다. 그리고 또한 192.168.88.10 이라는 주소에서 80포트를 사용하여 웹서버를 운">
+<meta name="keywords" content="NAT Hairpin,NAT Loopback,Mikrotik,Router">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mikrotik 라우터에서 NAT Hairpin (Loopback) 설정하기">
+<meta property="og:title" content="MikroTik 라우터에서 NAT Hairpin (Loopback) 설정하기">
 <meta property="og:url" content="http://leecarus.github.io/2018/07/19/Mikrotik-라우터에서-NAT-Hairpin-Loopback-설정하기/index.html">
 <meta property="og:site_name" content="기록은 기억을 지배한다">
-<meta property="og:description" content="1. 내부 네트워크에서 외부 IP로 내부 서버 접속 문제당신은 현재 미크로틱 (Mikrotik) 라우터를 사용하여 로컬망을 사용하고 있습니다. 내부 네트워크는 192.168.88.X 를 사용하고, 외부 접속을 위한 공인 IP는 1.2.3.4 를 사용하고 있다고 가정합니다. 그리고 또한 192.168.88.10 이라는 주소에서 80포트를 사용하여 웹서버를 운">
+<meta property="og:description" content="1. 내부 네트워크에서 외부 IP로 내부 서버 접속 문제당신은 현재 미크로틱 (MikroTik) 라우터를 사용하여 로컬망을 사용하고 있습니다. 내부 네트워크는 192.168.88.X 를 사용하고, 외부 접속을 위한 공인 IP는 1.2.3.4 를 사용하고 있다고 가정합니다. 그리고 또한 192.168.88.10 이라는 주소에서 80포트를 사용하여 웹서버를 운">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-07-19T06:54:49.574Z">
+<meta property="og:updated_time" content="2018-07-19T07:19:10.915Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mikrotik 라우터에서 NAT Hairpin (Loopback) 설정하기">
-<meta name="twitter:description" content="1. 내부 네트워크에서 외부 IP로 내부 서버 접속 문제당신은 현재 미크로틱 (Mikrotik) 라우터를 사용하여 로컬망을 사용하고 있습니다. 내부 네트워크는 192.168.88.X 를 사용하고, 외부 접속을 위한 공인 IP는 1.2.3.4 를 사용하고 있다고 가정합니다. 그리고 또한 192.168.88.10 이라는 주소에서 80포트를 사용하여 웹서버를 운">
+<meta name="twitter:title" content="MikroTik 라우터에서 NAT Hairpin (Loopback) 설정하기">
+<meta name="twitter:description" content="1. 내부 네트워크에서 외부 IP로 내부 서버 접속 문제당신은 현재 미크로틱 (MikroTik) 라우터를 사용하여 로컬망을 사용하고 있습니다. 내부 네트워크는 192.168.88.X 를 사용하고, 외부 접속을 위한 공인 IP는 1.2.3.4 를 사용하고 있다고 가정합니다. 그리고 또한 192.168.88.10 이라는 주소에서 80포트를 사용하여 웹서버를 운">
     
 
     
@@ -71,7 +71,7 @@
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
-                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Nas/">Nas</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Nas/Docker/">Docker</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Network/">Network</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Network/Mikrotik/">Mikrotik</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web/">Web</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web/Hexo/">Hexo</a></li></ul></li></ul>
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Network/">Network</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web/">Web</a></li></ul>
                                     
                                 <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/about/">About</a>
@@ -130,7 +130,7 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/Network/">Network</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Network/Mikrotik/">Mikrotik</a>
+    <a class="page-title-link" href="/categories/Network/">Network</a>
     </h1>
 </div>
                         <div class="main-body-content">
@@ -141,7 +141,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-        Mikrotik 라우터에서 NAT Hairpin (Loopback) 설정하기
+        MikroTik 라우터에서 NAT Hairpin (Loopback) 설정하기
         </h1>
     
 
@@ -159,14 +159,14 @@
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/NAT-Hairpin/">NAT Hairpin</a>, <a class="tag-link" href="/tags/NAT-Loopback/">NAT Loopback</a>, <a class="tag-link" href="/tags/라우터-Router/">라우터 (Router)</a>, <a class="tag-link" href="/tags/미크로틱-Mikrotik/">미크로틱 (Mikrotik)</a>
+        <a class="tag-link" href="/tags/Mikrotik/">Mikrotik</a>, <a class="tag-link" href="/tags/NAT-Hairpin/">NAT Hairpin</a>, <a class="tag-link" href="/tags/NAT-Loopback/">NAT Loopback</a>, <a class="tag-link" href="/tags/Router/">Router</a>
     </div>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h2 id="1-내부-네트워크에서-외부-IP로-내부-서버-접속-문제"><a href="#1-내부-네트워크에서-외부-IP로-내부-서버-접속-문제" class="headerlink" title="1. 내부 네트워크에서 외부 IP로 내부 서버 접속 문제"></a>1. 내부 네트워크에서 외부 IP로 내부 서버 접속 문제</h2><p>당신은 현재 미크로틱 (Mikrotik) 라우터를 사용하여 로컬망을 사용하고 있습니다. 내부 네트워크는 192.168.88.X 를 사용하고, 외부 접속을 위한 공인 IP는 1.2.3.4 를 사용하고 있다고 가정합니다.</p>
+            <h2 id="1-내부-네트워크에서-외부-IP로-내부-서버-접속-문제"><a href="#1-내부-네트워크에서-외부-IP로-내부-서버-접속-문제" class="headerlink" title="1. 내부 네트워크에서 외부 IP로 내부 서버 접속 문제"></a>1. 내부 네트워크에서 외부 IP로 내부 서버 접속 문제</h2><p>당신은 현재 미크로틱 (MikroTik) 라우터를 사용하여 로컬망을 사용하고 있습니다. 내부 네트워크는 192.168.88.X 를 사용하고, 외부 접속을 위한 공인 IP는 1.2.3.4 를 사용하고 있다고 가정합니다.</p>
 <p>그리고 또한 192.168.88.10 이라는 주소에서 80포트를 사용하여 웹서버를 운영하고 있습니다. </p>
 <p>공유기에서 포트 포워딩이 잘 이루어졌다면 1.2.3.4:80 으로 외부에서 접슥을 하면 이 웹서버에 정상적으로 접속이 가능합니다.</p>
 <p>반면에 내부망에 있는 사용자는 192.169.88.10:80 이라는 로컬 주소를 사용해야 이 웹서버에 정상적으로 접속이 가능합니다. </p>
@@ -175,7 +175,7 @@
 <p>외부 공인 IP 주소를 불러오는 사용자가 동일한 IP 에 있는 상황이기 때문에 서버가 같은 로컬 네트워크) 내에 있는 상황입니다.  즉, 외부에서 바라보면 1.2.3.4 라는 주소를 사용하는 사용자가 1.2.3.4 라는 목적지를 요청하는 상황이 되기 때문에 정상적인 접속이 이루어지지 않습니다. </p>
 <p>이럴 때에 라우터 자체에서 이러한 트래픽의 경우 외부로 돌리지 않고 내부에서 바로 목적지로 보내버릴 수가 있습니다. 이러한 과정을 NAT Loopback 또는 NAT Hairpin 설정이라고 부릅니다.</p>
 <p>접속하려는 목적지가 자기 자신이 속해 있는 네트워크일 때 패킷을 외부로 보내지 않고, 내부로 바로 전환해 줄 수 있도록 설정해 주는 과정입니다. </p>
-<h2 id="3-미크로틱-Mikrotik-라우터에서-Loopback-Hairpin-설정"><a href="#3-미크로틱-Mikrotik-라우터에서-Loopback-Hairpin-설정" class="headerlink" title="3. 미크로틱 (Mikrotik) 라우터에서 Loopback (Hairpin) 설정"></a>3. 미크로틱 (Mikrotik) 라우터에서 Loopback (Hairpin) 설정</h2><p>미크로틱 (Mikrotik) 라우터에서 아래와 같은 설정을 해주시면 문제가 해결이 됩니다.</p>
+<h2 id="3-미크로틱-MikroTik-라우터에서-Loopback-Hairpin-설정"><a href="#3-미크로틱-MikroTik-라우터에서-Loopback-Hairpin-설정" class="headerlink" title="3. 미크로틱 (MikroTik) 라우터에서 Loopback (Hairpin) 설정"></a>3. 미크로틱 (MikroTik) 라우터에서 Loopback (Hairpin) 설정</h2><p>미크로틱 (MikroTik) 라우터에서 아래와 같은 설정을 해주시면 문제가 해결이 됩니다.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/ip firewall nat </span><br><span class="line"></span><br><span class="line">add chain=dstnat dst-address=1.2.3.4[Your IP] protocol=tcp dst-port=80 action=dst-nat to-addresses=192.168.88.10[Your Server Local IP] to-ports=80 </span><br><span class="line"></span><br><span class="line">add chain=srcnat src-address=192.168.88.0/24[Your Local Network] dst-address=192.168.88.0/24 [Your Local Network] protocol=tcp out-interface=[LAN] action=masquerade</span><br></pre></td></tr></table></figure>
 <p>내 로컬 네트워크에서 나의 외부 IP로 접속을 요청하는 경우 라우터에서 바로 해당 웹서버로 연결시켜주는 설정입니다. </p>
 
@@ -307,8 +307,8 @@
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Network/">Network</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Network/Mikrotik/">Mikrotik</a></p>
-                            <p class="item-title"><a href="/2018/07/19/Mikrotik-라우터에서-NAT-Hairpin-Loopback-설정하기/" class="title">Mikrotik 라우터에서 NAT Hairpin (Loopback) 설정하기</a></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/Network/">Network</a></p>
+                            <p class="item-title"><a href="/2018/07/19/Mikrotik-라우터에서-NAT-Hairpin-Loopback-설정하기/" class="title">MikroTik 라우터에서 NAT Hairpin (Loopback) 설정하기</a></p>
                             <p class="item-date"><time datetime="2018-07-19T06:11:39.000Z" itemprop="datePublished">2018-07-19</time></p>
                         </div>
                     </li>
@@ -316,7 +316,7 @@
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Nas/">Nas</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Nas/Docker/">Docker</a></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/Network/">Network</a></p>
                             <p class="item-title"><a href="/2018/07/12/Synology-Nas에서-Docker를-이용하여-Snipe-IT-세팅하기/" class="title">Synology Nas에서 Docker를 이용하여 Snipe-IT 세팅하기</a></p>
                             <p class="item-date"><time datetime="2018-07-12T07:21:50.000Z" itemprop="datePublished">2018-07-12</time></p>
                         </div>
@@ -325,7 +325,7 @@
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Web/">Web</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Web/Hexo/">Hexo</a></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/Web/">Web</a></p>
                             <p class="item-title"><a href="/2018/07/11/Hexo-테마-추천-Hueman-테마-설정하기/" class="title">Hexo 테마 추천 - Hueman 테마 설정하기</a></p>
                             <p class="item-date"><time datetime="2018-07-11T03:04:21.000Z" itemprop="datePublished">2018-07-11</time></p>
                         </div>
@@ -334,7 +334,7 @@
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Web/">Web</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Web/Hexo/">Hexo</a></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/Web/">Web</a></p>
                             <p class="item-title"><a href="/2018/07/10/GitHub-페이지에-Hexo-블로그-설치하기/" class="title">GitHub 페이지에 Hexo 블로그 설치하기</a></p>
                             <p class="item-date"><time datetime="2018-07-10T10:23:29.000Z" itemprop="datePublished">2018-07-10</time></p>
                         </div>
@@ -349,7 +349,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Nas/">Nas</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Nas/Docker/">Docker</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Network/">Network</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Network/Mikrotik/">Mikrotik</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web/">Web</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Web/Hexo/">Hexo</a><span class="category-list-count">2</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Network/">Network</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web/">Web</a><span class="category-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -369,7 +369,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/IT-자산관리/">IT 자산관리</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NAT-Hairpin/">NAT Hairpin</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NAT-Loopback/">NAT Loopback</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Snipe-IT/">Snipe IT</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/깃허브-GitHub/">깃허브 (GitHub)</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/라우터-Router/">라우터 (Router)</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/미크로틱-Mikrotik/">미크로틱 (Mikrotik)</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/시놀로지-Synology/">시놀로지 (Synology)</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/오픈소스/">오픈소스</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/헥소-Hexo/">헥소 (Hexo)</a><span class="tag-list-count">2</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/">GitHub</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mikrotik/">Mikrotik</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NAS/">NAS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NAT-Hairpin/">NAT Hairpin</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NAT-Loopback/">NAT Loopback</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Open-Source/">Open Source</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Router/">Router</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Snipe-IT/">Snipe IT</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Synology/">Synology</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -379,7 +379,7 @@
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/IT-자산관리/" style="font-size: 10px;">IT 자산관리</a> <a href="/tags/NAT-Hairpin/" style="font-size: 10px;">NAT Hairpin</a> <a href="/tags/NAT-Loopback/" style="font-size: 10px;">NAT Loopback</a> <a href="/tags/Snipe-IT/" style="font-size: 10px;">Snipe IT</a> <a href="/tags/깃허브-GitHub/" style="font-size: 10px;">깃허브 (GitHub)</a> <a href="/tags/라우터-Router/" style="font-size: 10px;">라우터 (Router)</a> <a href="/tags/미크로틱-Mikrotik/" style="font-size: 10px;">미크로틱 (Mikrotik)</a> <a href="/tags/시놀로지-Synology/" style="font-size: 10px;">시놀로지 (Synology)</a> <a href="/tags/오픈소스/" style="font-size: 10px;">오픈소스</a> <a href="/tags/헥소-Hexo/" style="font-size: 20px;">헥소 (Hexo)</a>
+            <a href="/tags/GitHub/" style="font-size: 20px;">GitHub</a> <a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/Mikrotik/" style="font-size: 10px;">Mikrotik</a> <a href="/tags/NAS/" style="font-size: 10px;">NAS</a> <a href="/tags/NAT-Hairpin/" style="font-size: 10px;">NAT Hairpin</a> <a href="/tags/NAT-Loopback/" style="font-size: 10px;">NAT Loopback</a> <a href="/tags/Open-Source/" style="font-size: 10px;">Open Source</a> <a href="/tags/Router/" style="font-size: 10px;">Router</a> <a href="/tags/Snipe-IT/" style="font-size: 10px;">Snipe IT</a> <a href="/tags/Synology/" style="font-size: 10px;">Synology</a>
         </div>
     </div>
 
